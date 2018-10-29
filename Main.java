@@ -303,7 +303,7 @@ class Main
          */
         System.out.println("*** Task 13 ***");
         String []monsterArray = new String[5];
-        String nameCount = "";
+        char nameCount = 'z';
         monsterArray[0] = "Cookie";
         monsterArray[1] = "Grover";
         monsterArray[2] = "Oscar the Grouch";
@@ -311,7 +311,11 @@ class Main
         monsterArray[4] = "Rosita";
         for (int i = 0; i<monsterArray.length; i++){
             System.out.println(monsterArray[i]);
-            
+        }
+        for (int i = 0; i<monsterArray.length; i++){
+            nameCount = monsterArray[i].toLowerCase().charAt(0);
+            if (nameCount=='a' ||nameCount=='e' ||nameCount=='i' ||nameCount=='o' ||nameCount=='u')
+                System.out.println(monsterArray[i]);
         }
          /*
           * Task 14
@@ -328,8 +332,30 @@ class Main
           *      So arindex[0]=2
           *         arindex[1]=5
           */
+         System.out.println("*** Task 14 ***");
+         int start = 3;
+         int end = 94;
+         int count14index=0;
+         int n14 = end - start +1;
+         int[] arx = new int[n14];
+         for (int i = 0; i < n14; i++){
+             arx[i] = start + i;
+             if (arx[i]%3 == 0)
+                count14index++;
+         }
+         int[] arindex = new int[count14index];
+         int k14 = 0;
+         for (int i = 0; i< n14; i++){
+             if (arx[i]%3==0){
+                 arindex[k14]=i;
+                 k14++;
+             }
+         }
+         for (int i = 0; i<count14index; i++)
+            System.out.println(arindex[i]);
          
          /*
+          * Task 15
           * Create an arrary called "fb" and calculate the
           * first 10 fibonacci sequence.  You start with
           * fb[0]=1
@@ -338,6 +364,14 @@ class Main
           * fb[3]=fb[1]+fb[2]
           * fb[4]=fb[2]+fb[3]
           */
-        
+         System.out.println("*** Task 15 ***");
+         int[] fb = new int[10];
+         fb[0] = 1;
+         fb[1] = 1;
+         for (int i = 2; i<fb.length; i++)
+             fb[i] = fb[i-2] + fb[i-1];
+         for (int i = 0; i<fb.length; i++)
+            System.out.println(fb[i]);
+         
     }
 }
